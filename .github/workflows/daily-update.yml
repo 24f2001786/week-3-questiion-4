@@ -1,27 +1,23 @@
-name: Daily Update (24f2001786@ds.study.iitm.ac.in)
+name: Daily Repository Update - 24f2001786@ds.study.iitm.ac.in
 
 on:
   schedule:
-    - cron: '30 2 * * *'
-  workflow_dispatch:  # Lets you test manually
+    - cron: '17 14 * * *'
+  workflow_dispatch:
 
 jobs:
-  update:
+  update-repo:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create or update timestamp
+      - name: 24f2001786@ds.study.iitm.ac.in - Add daily commit
         run: |
-          echo "Last updated: $(date -u)" > status.txt
-
-      - name: Commit changes
-        run: |
-          git config user.name "Daily Bot"
+          echo "Updated at $(date -u)" >> daily-log.txt
+          git config user.name "24f2001786"
           git config user.email "24f2001786@ds.study.iitm.ac.in"
-          git add status.txt
-          git commit -m "Daily update: $(date -u)"
+          git add daily-log.txt
+          git commit -m "Automated daily update: $(date -u)"
           git push
