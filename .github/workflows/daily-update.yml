@@ -1,6 +1,4 @@
-name: Daily Repository Update
-
-run-name: 24f2001786@ds.study.iitm.ac.in - Daily Repository Update
+name: 24f2001786@ds.study.iitm.ac.in
 
 permissions:
   contents: write
