@@ -1,5 +1,8 @@
 name: Daily Repository Update - 24f2001786@ds.study.iitm.ac.in
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '17 14 * * *'
@@ -13,11 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: 24f2001786@ds.study.iitm.ac.in - Add daily commit
+      - name: Add daily commit
         run: |
           echo "Updated at $(date -u)" >> daily-log.txt
           git config user.name "24f2001786"
-          git config user.email "24f2001786@ds.study.iitm.ac.in"
+          git config user.email "24f2001786@ds.study.ittm.ac.in"
           git add daily-log.txt
           git commit -m "Automated daily update: $(date -u)"
           git push
